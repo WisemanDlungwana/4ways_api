@@ -1,8 +1,7 @@
 <?php
-$db_host = 'localhost';
-$db_name = 'waysprod_4way';
-$db_user = 'waysprod_wiseman';
-$db_pass = 'Christforme19';
+$con = mysqli_init();
+mysqli_ssl_set($con,NULL,NULL, "{path to CA cert}", NULL, NULL);
+mysqli_real_connect($conn, "techwise.mysql.database.azure.com", "wiseman", "Christforme#19", "4waysdb", 3306, MYSQLI_CLIENT_SSL);
 
 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if (mysqli_connect_errno()) {
